@@ -8,37 +8,37 @@
 
 		default_layer {
 				// ------------------------------------------------------------------------------------------
-				// | ESC |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |BSLH |DEL |
+				// | ESC |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |   BKSP   |
 				// | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   "|"   |
-				// |  CLCK  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER     |
-				// |  SHIFT    |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  | /   |   SHIFT   | FN |
-				// |  CTRL |  WIN  |  ALT  |                   SPACE                 |  ALT  |  WIN  | CTRL |
+				// | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER    |
+				// |  SHIFT    |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  | /   |       DEL      |
+				// |  CTL  |  WIN  |  ALT  |                     SPACE               |   1   |  F9  |   2   |
 				// ------------------------------------------------------------------------------------------
 			bindings = <
-				&kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp  N8   &kp  N9 &kp  N0  &kp MINUS &kp EQUAL &kp BSLH &kp DEL
-				&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp  I    &kp  O  &kp  P   &kp LBKT &kp RBKT  &kp BSPC
+				&kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp  N8   &kp  N9 &kp  N0  &kp MINUS &kp EQUAL &kp BSPC
+				&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp  I    &kp  O  &kp  P   &kp LBKT &kp RBKT  &kp BSLH
 				&kp CLCK  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp  K    &kp  L  &kp SEMI &kp SQT           &kp RET
-				&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH    &kp RSHFT    &kp F9
-				&kp LCTRL &kp LGUI &kp LALT            &kp SPACE                        	     &kp RALT &tog 1 &tog 2
+				&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH    &kp DEL
+				&kp LCTRL &kp LGUI &kp LALT            &kp SPACE                          &tog 1 &kp F9 &tog 2
 			>;
-			sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 		function {
 			bindings = <
 				&kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10  &kp F11 &kp F12 &none &trans
 				&trans &none &kp UP &none &none &none &none &none &none &none &kp PSCRN &kp HOME &kp END &none
-				&trans  &kp LEFT &kp DOWN &kp RIGHT &none &none &none &none &none &none &none &kp PG_UP &kp PG_DN
-				&trans &none &none &none &none &none &none &none &none &none &none &none  &none
-				&trans &trans  &trans                     &kp BSPC                            	     &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP
+				&trans  &kp LEFT &kp DOWN &kp RIGHT &none &none &none &none &none &none &kp PG_UP &kp PG_DN &none
+				&trans &none &none &none &none &none &none &none &none &none &none &trans
+				&trans &trans  &trans                     &trans                            	     &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 		extra {
 			bindings = <
-				&none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none &none &none &bt BT_PRV &bt BT_NXT &none &bt BT_CLR
+				&none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none &none &none &bt BT_PRV &bt BT_NXT &bt BT_CLR
 				&reset &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&bootloader  &none &none &none &none &none &none &none &none &none &none  &none &none
-				&none &none&none &none &none &none &none &none &none &none &none &none &none
+				&bootloader &none &none &none &none &none &none &none &none &none &none &none &none
+				&none &none &none &none &none &none &none &none &none &none &none &none &none
 				&none &none &none                     &none                            	      &none &none &none
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
